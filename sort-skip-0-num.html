@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let arr = [10,0,2,16,7,0,8,9];
+for (let i = 0; i < arr.length - 1 ; i++) {
+    for (let j = i+1; j < arr.length ; j++) {
+        if (arr[i] > arr[j] && arr[i] !== 0 && arr[j] !== 0){
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+//2,0,10,16,7,0,8,9
+    //2,0,7,16,10,8,9
+    //2,0,7,10,16,8,9
+    //2,0,7,8,16,10,9
+    //2,0,7
+    document.write(arr);
+</script>
+</body>
+</html>

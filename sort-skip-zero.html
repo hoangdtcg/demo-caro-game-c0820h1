@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [10,0,2,16,7,0,8,9];
+    let arr2 = [];
+
+    function getMin(arr,index) {
+        if(arr[index] === 0) return 0;
+        let min = arr[index];
+        let find = index;
+        for (let i = index; i < arr.length; i++) {
+            if(min > arr[i] && arr[i]!==0){
+                min = arr[i];
+                find = i;
+            }
+        }
+        arr[find] = arr[index];
+        return min;
+    }
+
+
+    function sortArraySkipZero() {
+        for (let i = 0; i < arr.length; i++) {
+            arr2.push(getMin(arr,i));
+        }
+
+        document.write(arr2);
+    }
+
+    sortArraySkipZero();
+</script>
+</body>
+</html>
